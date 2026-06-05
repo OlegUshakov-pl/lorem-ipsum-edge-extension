@@ -49,7 +49,7 @@ The extension includes:
 
 ## ✨ Keyboard Shortcuts & Controls
 
-- **Type Selector**: Choose between Paragraphs (1-20) or Words (1-200)
+- **Type Selector**: Choose between Paragraphs (1-200) or Words (1-200)
 - **Count Slider**: Drag to adjust count value
 - **Generate Button**: Click to generate Lorem Ipsum text
 - **Copy Button**: Click to copy generated text with visual feedback
