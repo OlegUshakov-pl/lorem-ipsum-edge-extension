@@ -5,12 +5,12 @@ A simple and elegant browser extension for generating Lorem Ipsum placeholder te
 
 ## 📋 Features
 
-- **Generate Paragraphs or Words** - Choose between generating Lorem Ipsum paragraphs or individual words
-- **Adjustable Count** - Use a smooth horizontal slider to select from 1 to 200 items
-- **Real-time Counter** - Displays live word and character count
+- **Generate Words, Paragraphs or Letters** - Choose between generating Lorem Ipsum paragraphs, individual words, or single letters
+- **Adjustable Count** - Use a smooth horizontal slider with a round thumb to select from 1 to 200 items
+- **Real-time Counter** - Displays live letter, word and character count
 - **One-click Copy** - Easily copy generated text to clipboard
 - **Modern UI** - Clean and minimal interface with a professional design
-- **Instant Feedback** - Copy button shows confirmation when text is copied
+- **Instant Feedback** - Green copy button shows confirmation when text is copied
 
 ## 🚀 Installation
 
@@ -24,10 +24,10 @@ A simple and elegant browser extension for generating Lorem Ipsum placeholder te
 ## 📖 Usage
 
 1. Click the extension icon in your toolbar
-2. Select **Type**: Choose between "Paragraphs" or "Words"
+2. Select **Type**: Choose between "Words", "Paragraphs" or "Letters"
 3. Adjust the **Count** slider (1-200)
 4. Click **Generate** button to create the text
-5. View the word and character count at the bottom
+5. View the letter, word and character count at the bottom
 6. Click **Copy** to copy the generated text to your clipboard
 
 ## 🎨 Customization
@@ -36,7 +36,7 @@ The extension includes:
 - `manifest.json` - Extension configuration
 - `popup.html` - User interface markup
 - `popup.js` - Core functionality and logic
-- `style.css` - Modern styling with no rounded corners
+- `style.css` - Modern styling
 - Icon files (16x48x128px)
 
 ## 📐 Technical Details
@@ -44,19 +44,20 @@ The extension includes:
 - **Width**: 350px popup window
 - **Font Size**: 16px headers, 13-14px controls, 12px version info
 - **Theme**: Light gray background (#ccc) with clean white controls
-- **Slider**: Horizontal range input with real-time value display
-- **Counter**: Dynamic word and character calculation
+- **Slider**: Horizontal range input with round thumb and real-time value display
+- **Counter**: Dynamic letter, word and character calculation
+- **Copy Button**: Green (#28a745) with rounded corners (8px) and shadow
 
-## ✨ Keyboard Shortcuts & Controls
+## ✨ Controls
 
-- **Type Selector**: Choose between Paragraphs (1-200) or Words (1-200)
+- **Type Selector**: Choose between Words, Paragraphs (1-200) or Letters (1-200)
 - **Count Slider**: Drag to adjust count value
 - **Generate Button**: Click to generate Lorem Ipsum text
-- **Copy Button**: Click to copy generated text with visual feedback
+- **Copy Button**: Click to copy generated text with visual feedback (white text on green background)
 
 ## 📦 Version
 
-**Version 1.00** - Initial release
+**Version 1.10** - Added Letters type and counter, rounded slider thumb, green copy button
 
 ## 🛠️ Browser Compatibility
 
