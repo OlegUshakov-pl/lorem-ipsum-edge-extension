@@ -14,12 +14,15 @@ const generateBtn = document.getElementById("generate");
 const copyBtn = document.getElementById("copy");
 const wordCountSpan = document.getElementById("wordCount");
 const charCountSpan = document.getElementById("charCount");
+const letterCountSpan = document.getElementById("letterCount");
 
 function updateCounter() {
   const text = output.value.trim();
   const charCount = text.length;
   const wordCount = text.length > 0 ? text.split(/\s+/).length : 0;
+  const letterCount = text.replace(/[^a-zA-Z]/g, "").length;
   
+  letterCountSpan.textContent = letterCount;
   wordCountSpan.textContent = wordCount;
   charCountSpan.textContent = charCount;
 }
@@ -42,12 +45,23 @@ function generateParagraphs(count) {
   return result.join('\n\n');
 }
 
+function generateLetters(count) {
+  const allLetters = loremWords.join('').split('');
+  let result = [];
+  for (let i = 0; i < count; i++) {
+    result.push(allLetters[i % allLetters.length]);
+  }
+  return result.join('');
+}
+
 generateBtn.addEventListener("click", () => {
   const type = typeSelect.value;
   const count = Math.max(1, Math.min(200, parseInt(countInput.value) || 1));
   
   if (type === "words") {
     output.value = generateWords(count);
+  } else if (type === "letters") {
+    output.value = generateLetters(count);
   } else {
     output.value = generateParagraphs(count);
   }
@@ -79,15 +93,4 @@ output.addEventListener("input", updateCounter);
 // Update count value display when slider changes
 countInput.addEventListener("input", () => {
   document.getElementById("countValue").textContent = countInput.value;
-});
-
-// Update max value based on type
-typeSelect.addEventListener("change", () => {
-  if (typeSelect.value === "words") {
-    countInput.max = "200";
-    countInput.value = Math.min(countInput.value, 200);
-  } else {
-    countInput.max = "200";
-    countInput.value = Math.min(countInput.value, 200);
-  }
 });

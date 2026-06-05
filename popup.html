@@ -1,38 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Lorem Ipsum Generator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Lorem Ipsum</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lorem Ipsum Generator</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Lorem Ipsum</h1>
 
-  <div class="controls-row">
-    <div class="input-group">
-      <label>Type:</label>
-      <select id="type">
-        <option value="paragraphs">Paragraphs</option>
-        <option value="words">Words</option>
-      </select>
-    </div>
-    <button id="generate" class="btn-generate">Generate</button>
-  </div>
+        <div class="controls-row">
+            <div class="input-group">
+                <label>Type:</label>
+                <select id="type">
+                    <option value="paragraphs">Paragraphs</option>
+                    <option value="words">Words</option>
+                    <option value="letters">Letters</option>
+                </select>
+            </div>
+            <button id="generate" class="btn-generate">Generate</button>
+        </div>
 
-  <div class="slider-group">
-    <label>Count: <span id="countValue">3</span></label>
-    <input type="range" id="count" min="1" max="200" value="3">
-  </div>
+        <div class="slider-group">
+            <label>Count: <span id="countValue">3</span></label>
+            <input type="range" id="count" min="1" max="200" value="3" />
+        </div>
 
-  <textarea id="output" placeholder="Generated text will appear here..."></textarea>
+        <textarea id="output" placeholder="Generated text will appear here..."></textarea>
 
-  <div class="footer-row">
-    <div class="counter">Words: <span id="wordCount">0</span> | Characters: <span id="charCount">0</span></div>
-    <button id="copy" class="btn-copy">Copy</button>
-  </div>
+        <div class="footer-row">
+            <div class="counter">
+                Letters: <span id="letterCount">0</span> | Words: <span id="wordCount">0</span> |
+                Characters: <span id="charCount">0</span>
+            </div>
+            <button id="copy" class="btn-copy">Copy</button>
+        </div>
 
-  <div class="version">Version 1.00</div>
+        <div class="version">Version 1.10</div>
 
-  <script src="popup.js"></script>
-</body>
+        <script src="popup.js"></script>
+    </body>
 </html>
