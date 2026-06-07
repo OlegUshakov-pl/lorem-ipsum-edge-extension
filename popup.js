@@ -13,7 +13,7 @@ const countInput = document.getElementById("count");
 const generateBtn = document.getElementById("generate");
 const copyBtn = document.getElementById("copy");
 const wordCountSpan = document.getElementById("wordCount");
-const charCountSpan = document.getElementById("charCount");
+const paragraphCountSpan = document.getElementById("paragraphCount");
 const letterCountSpan = document.getElementById("letterCount");
 
 function updateCounter() {
@@ -21,10 +21,11 @@ function updateCounter() {
   const charCount = text.length;
   const wordCount = text.length > 0 ? text.split(/\s+/).length : 0;
   const letterCount = text.replace(/[^a-zA-Z]/g, "").length;
+  const paragraphCount = text.length > 0 ? text.split(/\n\s*\n/).filter(p => p.trim().length > 0).length : 0;
   
   letterCountSpan.textContent = letterCount;
   wordCountSpan.textContent = wordCount;
-  charCountSpan.textContent = charCount;
+  paragraphCountSpan.textContent = paragraphCount;
 }
 
 function generateWords(count) {
