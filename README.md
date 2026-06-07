@@ -1,74 +1,58 @@
-![image](Image.png)
 # Lorem Ipsum Generator - Edge Extension
 
-A simple and elegant browser extension for generating Lorem Ipsum placeholder text directly from your browser.
+A simple browser extension for generating Lorem Ipsum placeholder text directly from your browser.
 
-## 📋 Features
+## Features
 
-- **Generate Words, Paragraphs or Letters** - Choose between generating Lorem Ipsum paragraphs, individual words, or single letters
-- **Adjustable Count** - Use a smooth horizontal slider with a round thumb to select from 1 to 200 items
-- **Real-time Counter** - Displays live letter, word and character count
-- **One-click Copy** - Easily copy generated text to clipboard
-- **Modern UI** - Clean and minimal interface with a professional design
-- **Instant Feedback** - Green copy button shows confirmation when text is copied
+- **Words, Paragraphs or Letters** — choose between generating Lorem Ipsum paragraphs, individual words, or single letters
+- **Adjustable Count** — horizontal slider from 1 to 200
+- **Real-time Counter** — displays live letter, word and paragraph count
+- **One-click Copy** — copy generated text to clipboard
+- **Clear** — clear the generated text with one click
+- **Modern UI** — clean minimal interface
 
-## 🚀 Installation
+## Installation
 
 1. Download or clone this repository
 2. Open Microsoft Edge browser
 3. Navigate to `edge://extensions/`
-4. Enable **Developer mode** (toggle in the top-right corner)
+4. Enable **Developer mode**
 5. Click **Load unpacked**
 6. Select the extension folder
 
-## 📖 Usage
+## Usage
 
 1. Click the extension icon in your toolbar
-2. Select **Type**: Choose between "Words", "Paragraphs" or "Letters"
-3. Adjust the **Count** slider (1-200)
-4. Click **Generate** button to create the text
-5. View the letter, word and character count at the bottom
-6. Click **Copy** to copy the generated text to your clipboard
+2. Select **Type**: Words, Paragraphs or Letters
+3. Adjust the **Count** slider (1–200)
+4. Click **Generate** to create text
+5. View letter, word and paragraph count at the bottom
+6. Click **Copy** to copy text, or **Clear** to reset
 
-## 🎨 Customization
+## Project Files
 
-The extension includes:
-- `manifest.json` - Extension configuration
-- `popup.html` - User interface markup
-- `popup.js` - Core functionality and logic
-- `style.css` - Modern styling
-- Icon files (16x48x128px)
+- `manifest.json` — Extension configuration (Manifest V3)
+- `popup.html` — User interface markup
+- `popup.js` — Core logic
+- `style.css` — Styling
+- Icon files (16×48×128px)
 
-## 📐 Technical Details
+## Technical Details
 
-- **Width**: 350px popup window
-- **Font Size**: 16px headers, 13-14px controls, 12px version info
-- **Theme**: Light gray background (#ccc) with clean white controls
-- **Slider**: Horizontal range input with round thumb and real-time value display
-- **Counter**: Dynamic letter, word and character calculation
-- **Copy Button**: Green (#28a745) with rounded corners (8px) and shadow
+- Popup width: 350px
+- Font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+- Copy button: green (#25da4f), Clear button: lab(63.3038 -18.433 -51.0407)
+- Both buttons have matching font, shadow, and border-radius (18px)
+- Counter shows Letters, Words, and Paragraphs in real time
 
-## ✨ Controls
+## Version
 
-- **Type Selector**: Choose between Words, Paragraphs (1-200) or Letters (1-200)
-- **Count Slider**: Drag to adjust count value
-- **Generate Button**: Click to generate Lorem Ipsum text
-- **Copy Button**: Click to copy generated text with visual feedback (white text on green background)
+**Version 1.30**
 
-## 📦 Version
-
-**Version 1.10** - Added Letters type and counter, rounded slider thumb, green copy button
-
-## 🛠️ Browser Compatibility
+## Browser Compatibility
 
 - Microsoft Edge (Chromium-based)
-- Modern browsers with Manifest V3 support
-
-## 📝 Notes
-
-- Generated text is authentic Lorem Ipsum placeholder text
-- Text is not stored anywhere - only displayed in the popup
-- Copy functionality uses the browser's native Clipboard API
+- Any browser with Manifest V3 support
 
 ---
 
