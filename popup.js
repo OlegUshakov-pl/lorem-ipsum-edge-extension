@@ -12,6 +12,7 @@ const typeSelect = document.getElementById("type");
 const countInput = document.getElementById("count");
 const generateBtn = document.getElementById("generate");
 const copyBtn = document.getElementById("copy");
+const clearBtn = document.getElementById("clear");
 const wordCountSpan = document.getElementById("wordCount");
 const paragraphCountSpan = document.getElementById("paragraphCount");
 const letterCountSpan = document.getElementById("letterCount");
@@ -87,6 +88,11 @@ copyBtn.addEventListener("click", async () => {
   } catch (err) {
     alert("Copy failed.");
   }
+});
+
+clearBtn.addEventListener("click", () => {
+  output.value = "";
+  output.dispatchEvent(new Event("input", { bubbles: true }));
 });
 
 output.addEventListener("input", updateCounter);
