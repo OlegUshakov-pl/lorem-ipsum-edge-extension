@@ -40,7 +40,7 @@ A lightweight browser extension to generate Lorem Ipsum placeholder text directl
 
 ## Version
 
-**1.34**
+**1.35**
 
 ## Browser Compatibility
 
