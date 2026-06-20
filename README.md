@@ -1,3 +1,4 @@
+![lorem ipsum](Image.png)
 # Lorem Ipsum Generator — Edge Extension
 
 A lightweight browser extension to generate Lorem Ipsum placeholder text directly from your toolbar.
