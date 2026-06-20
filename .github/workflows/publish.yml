@@ -19,10 +19,10 @@ jobs:
             --exclude "README.md" \
             --exclude "Image.png"
 
-             - name: Publish to Edge
-                    uses: wdzeng/edge-addon@v2
-                    with:
-                      product-id: ${{ secrets.EDGE_PRODUCT_ID }}
-                      client-id: ${{ secrets.EDGE_CLIENT_ID }}
-                      api-key: ${{ secrets.EDGE_CLIENT_SECRET }}
-                      zip-path: extension.zip
+      - name: Publish to Edge
+        uses: wdzeng/edge-addon@v2
+        with:
+          product-id: ${{ secrets.EDGE_PRODUCT_ID }}
+          client-id: ${{ secrets.EDGE_CLIENT_ID }}
+          api-key: ${{ secrets.EDGE_CLIENT_SECRET }}
+          zip-path: extension.zip
