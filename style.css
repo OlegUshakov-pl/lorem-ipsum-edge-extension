@@ -162,6 +162,7 @@ textarea {
     margin-bottom: 12px;
     overflow-x: auto;
     overflow-y: auto;
+    font-weight: 600;
 }
 
 textarea:focus {
