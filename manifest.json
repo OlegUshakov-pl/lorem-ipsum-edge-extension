@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Simple Lorem Ipsum Generator",
-  "version": "1.35",
+  "version": "1.40",
   "description": "Generate lorem ipsum paragraphs instantly.",
   "action": {
     "default_popup": "popup.html",

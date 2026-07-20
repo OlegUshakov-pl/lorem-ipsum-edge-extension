@@ -16,7 +16,7 @@ h1 {
 
 .controls-row {
     display: flex;
-    gap: 12px;
+    gap: 17px;
     align-items: flex-end;
     margin-bottom: 16px;
 }
@@ -34,6 +34,10 @@ label {
     color: #333;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.label-language {
+    font-size: 13px;
 }
 
 input,
@@ -65,6 +69,27 @@ input[type="number"] {
 
 select {
     cursor: pointer;
+}
+
+select#type {
+    width: 145px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+select#language {
+    width: 40px;
+    height: 35px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
 }
 
 .slider-group {

@@ -1,14 +1,24 @@
-const loremText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+const loremTextLat = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 
-const words = loremText.toLowerCase().split(/\s+/).filter(w => w.length > 0);
-const loremWords = words.map(w => w.replace(/[^a-z]/g, ''));
+const loremTextEn = `The quick brown fox jumps over the lazy dog near the riverbank. 
+A gentle breeze carries the sweet scent of wildflowers across the meadow. 
+The old oak tree stands tall against the morning sky, its leaves rustling softly. 
+Birds sing their cheerful songs as the sun rises above the distant hills. 
+Nature awakens with a promise of a beautiful new day full of wonder.`;
+
+const wordsLat = loremTextLat.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+const loremWordsLat = wordsLat.map(w => w.replace(/[^a-z]/g, ''));
+
+const wordsEn = loremTextEn.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+const loremWordsEn = wordsEn.map(w => w.replace(/[^a-z]/g, ''));
 
 const output = document.getElementById("output");
 const typeSelect = document.getElementById("type");
+const languageSelect = document.getElementById("language");
 const countInput = document.getElementById("count");
 const generateBtn = document.getElementById("generate");
 const copyBtn = document.getElementById("copy");
@@ -29,26 +39,30 @@ function updateCounter() {
   paragraphCountSpan.textContent = paragraphCount;
 }
 
-function generateWords(count) {
+function generateWords(count, lang) {
+  const wordList = lang === 'en' ? loremWordsEn : loremWordsLat;
   let result = [];
   for (let i = 0; i < count; i++) {
-    result.push(loremWords[i % loremWords.length]);
+    result.push(wordList[i % wordList.length]);
   }
   return result.join(' ') + '.';
 }
 
-function generateParagraphs(count) {
-  let result = [];
-  const paragraph = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`;
+function generateParagraphs(count, lang) {
+  const paragraph = lang === 'en'
+    ? `The quick brown fox jumps over the lazy dog near the riverbank. A gentle breeze carries the sweet scent of wildflowers across the meadow. The old oak tree stands tall against the morning sky, its leaves rustling softly.`
+    : `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`;
   
+  let result = [];
   for (let i = 0; i < count; i++) {
     result.push(paragraph);
   }
   return result.join('\n\n');
 }
 
-function generateLetters(count) {
-  const allLetters = loremWords.join('').split('');
+function generateLetters(count, lang) {
+  const wordList = lang === 'en' ? loremWordsEn : loremWordsLat;
+  const allLetters = wordList.join('').split('');
   let result = [];
   for (let i = 0; i < count; i++) {
     result.push(allLetters[i % allLetters.length]);
@@ -58,14 +72,15 @@ function generateLetters(count) {
 
 generateBtn.addEventListener("click", () => {
   const type = typeSelect.value;
+  const lang = languageSelect.value;
   const count = Math.max(1, Math.min(200, parseInt(countInput.value) || 1));
   
   if (type === "words") {
-    output.value = generateWords(count);
+    output.value = generateWords(count, lang);
   } else if (type === "letters") {
-    output.value = generateLetters(count);
+    output.value = generateLetters(count, lang);
   } else {
-    output.value = generateParagraphs(count);
+    output.value = generateParagraphs(count, lang);
   }
   
   // Принудительно обновить счетчик

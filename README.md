@@ -6,6 +6,7 @@ A lightweight browser extension to generate Lorem Ipsum placeholder text directl
 ## Features
 
 - **Words, Paragraphs, or Letters** — three generation modes
+- **Language Selection** — choose between Latin (LAT) or English (EN)
 - **Adjustable Count** — slider from 1 to 200
 - **Real-time Counter** — live letters, words, and paragraphs stats
 - **One-click Copy** — copy generated text to clipboard
@@ -23,10 +24,11 @@ A lightweight browser extension to generate Lorem Ipsum placeholder text directl
 
 1. Click the extension icon in the toolbar
 2. Choose **Type**: Words, Paragraphs, or Letters
-3. Adjust the **Count** slider (1–200)
-4. Hit **Generate** to produce text
-5. Check letters, words, and paragraph count at the bottom
-6. Use **Copy** to copy or **Clear** to reset
+3. Choose **Language**: LAT (Latin) or EN (English)
+4. Adjust the **Count** slider (1–200)
+5. Hit **Generate** to produce text
+6. Check letters, words, and paragraph count at the bottom
+7. Use **Copy** to copy or **Clear** to reset
 
 ## Files
 
@@ -40,7 +42,7 @@ A lightweight browser extension to generate Lorem Ipsum placeholder text directl
 
 ## Version
 
-**1.35**
+**1.40**
 
 ## Browser Compatibility
 
