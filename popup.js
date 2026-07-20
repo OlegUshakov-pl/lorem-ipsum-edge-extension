@@ -16,6 +16,11 @@ const loremWordsLat = wordsLat.map(w => w.replace(/[^a-z]/g, ''));
 const wordsEn = loremTextEn.toLowerCase().split(/\s+/).filter(w => w.length > 0);
 const loremWordsEn = wordsEn.map(w => w.replace(/[^a-z]/g, ''));
 
+const enParagraphWords = loremTextEn.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim().split(/\s+/);
+const latHalfCount = Math.ceil(enParagraphWords.length / 2);
+const latParagraphShort = loremTextLat.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim().split(/\s+/).slice(0, latHalfCount).join(' ');
+const enParagraph = enParagraphWords.join(' ');
+
 const output = document.getElementById("output");
 const typeSelect = document.getElementById("type");
 const languageSelect = document.getElementById("language");
@@ -48,10 +53,7 @@ function generateWords(count, lang) {
 }
 
 function generateParagraphs(count, lang) {
-  const paragraph = lang === 'en'
-    ? loremTextEn.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()
-    : loremTextLat.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
-  
+  const paragraph = lang === 'en' ? enParagraph : latParagraphShort;
   let result = [];
   for (let i = 0; i < count; i++) {
     result.push(paragraph);
