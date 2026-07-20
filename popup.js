@@ -29,7 +29,6 @@ const letterCountSpan = document.getElementById("letterCount");
 
 function updateCounter() {
   const text = output.value.trim();
-  const charCount = text.length;
   const wordCount = text.length > 0 ? text.split(/\s+/).length : 0;
   const letterCount = text.replace(/[^a-zA-Z]/g, "").length;
   const paragraphCount = text.length > 0 ? text.split(/\n\s*\n/).filter(p => p.trim().length > 0).length : 0;
@@ -50,8 +49,8 @@ function generateWords(count, lang) {
 
 function generateParagraphs(count, lang) {
   const paragraph = lang === 'en'
-    ? `The quick brown fox jumps over the lazy dog near the riverbank. A gentle breeze carries the sweet scent of wildflowers across the meadow. The old oak tree stands tall against the morning sky, its leaves rustling softly.`
-    : `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`;
+    ? loremTextEn.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()
+    : loremTextLat.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
   
   let result = [];
   for (let i = 0; i < count; i++) {
@@ -73,7 +72,7 @@ function generateLetters(count, lang) {
 generateBtn.addEventListener("click", () => {
   const type = typeSelect.value;
   const lang = languageSelect.value;
-  const count = Math.max(1, Math.min(200, parseInt(countInput.value) || 1));
+  const count = Math.max(1, Math.min(200, parseInt(countInput.value, 10) || 1));
   
   if (type === "words") {
     output.value = generateWords(count, lang);
@@ -83,7 +82,7 @@ generateBtn.addEventListener("click", () => {
     output.value = generateParagraphs(count, lang);
   }
   
-  // Принудительно обновить счетчик
+  // Force counter update
   output.dispatchEvent(new Event("input", { bubbles: true }));
 });
 
@@ -95,10 +94,9 @@ copyBtn.addEventListener("click", async () => {
   
   try {
     await navigator.clipboard.writeText(output.value);
-    const originalText = copyBtn.textContent;
     copyBtn.textContent = "Copied! ✓";
     setTimeout(() => {
-      copyBtn.textContent = originalText;
+      copyBtn.textContent = "Copy";
     }, 2000);
   } catch (err) {
     alert("Copy failed.");

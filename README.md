@@ -1,17 +1,19 @@
 ![lorem ipsum](Image.png)
-# Lorem Ipsum Generator — Edge Extension
 
-A lightweight browser extension to generate Lorem Ipsum placeholder text directly from your toolbar.
+# Simple Lorem Ipsum Generator — Edge Extension
+
+A lightweight browser extension that generates Lorem Ipsum placeholder text directly from your toolbar.
 
 ## Features
 
 - **Words, Paragraphs, or Letters** — three generation modes
-- **Language Selection** — choose between Latin (LAT) or English (EN)
+- **Language Selection** — choose between Latin (LT) or English (EN)
 - **Adjustable Count** — slider from 1 to 200
 - **Real-time Counter** — live letters, words, and paragraphs stats
 - **One-click Copy** — copy generated text to clipboard
 - **Clear** — reset output instantly
 - **Modern UI** — clean, minimal popup interface
+- **Privacy-first** — no data collection, fully offline
 
 ## Installation
 
@@ -23,8 +25,8 @@ A lightweight browser extension to generate Lorem Ipsum placeholder text directl
 ## Usage
 
 1. Click the extension icon in the toolbar
-2. Choose **Type**: Words, Paragraphs, or Letters
-3. Choose **Language**: LAT (Latin) or EN (English)
+2. Choose **Lang**: LT (Latin) or EN (English)
+3. Choose **Type**: Words, Paragraphs, or Letters
 4. Adjust the **Count** slider (1–200)
 5. Hit **Generate** to produce text
 6. Check letters, words, and paragraph count at the bottom
@@ -34,10 +36,11 @@ A lightweight browser extension to generate Lorem Ipsum placeholder text directl
 
 | File | Purpose |
 |---|---|
-| `manifest.json` | Extension config (Manifest V3) |
+| `manifest.json` | Extension configuration (Manifest V3) |
 | `popup.html` | Popup UI markup |
 | `popup.js` | Generation logic and event handling |
 | `style.css` | Popup styling |
+| `privacy.html` | Privacy policy page |
 | `icon16.png`, `icon48.png`, `icon128.png` | Extension icons |
 
 ## Version
