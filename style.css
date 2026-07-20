@@ -16,7 +16,7 @@ h1 {
 
 .controls-row {
     display: flex;
-    gap: 17px;
+    gap: 15px;
     align-items: flex-end;
     margin-bottom: 16px;
 }
@@ -72,7 +72,7 @@ select {
 }
 
 select#type {
-    width: 145px;
+    width: 150px;
     height: 35px;
     font-size: 14px;
     font-weight: 700;
